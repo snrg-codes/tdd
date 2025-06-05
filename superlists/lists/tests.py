@@ -18,5 +18,13 @@ class BoshSahifa(TestCase):
         self.assertIn('<title>To-Do lists</title>', html)
         self.assertTrue(html.endswith('</html>'))
 
+    def test_bosh_sahifa_html(self):
+        response = self.client.get('/')
+        self.assertTemplateUsed(response, 'bosh_sahifa.html')
+    
+    def test_yangi_ish_yaratish(self):
+        response = self.client.post('/', data={'iteam-text': "Yangi ish"})
+        self.assertIn('Yangi ish', response.content.decode())
+
 
 

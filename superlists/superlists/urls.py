@@ -16,7 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from lists.views import bosh_sahifa
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', bosh_sahifa, name='bosh_sahifa'),
+    path('/salom/', bosh_sahifa, name='salom'),
 ]

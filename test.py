@@ -1,15 +1,7 @@
-import requests
+from main import qushish
 
-url = "http://192.168.100.65:5000/login"
-
-payload = {
-    "username" : "admin",
-    "password" : "1234"
-}
-
-response = requests.post(url, json=payload)
-assert response.status_code == 200
-assert response.text is not None
-
-
-
+assert qushish(1,2) == 3
+assert qushish(1,"1") == 2
+assert qushish("1","1") == 2
+assert qushish("a", "b") == "ab"
+assert qushish("a", "2") == "a2"

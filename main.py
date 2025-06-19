@@ -1,6 +1,6 @@
-def qushish(a,b):
-    try:
-        sum = int(a)+int(b)
-    except:
-        sum = a+b
-    return sum
+def main():
+    print("Hello from tdd!")
+
+
+if __name__ == "__main__":
+    main()
